@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  branch = "master"
+  digest = "1:9831b48eaba66c6eee6b8bc698d5a669088313cfee3c94435056e3522e4a53fb"
+  name = "github.com/MakeNowJust/heredoc"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "e9091a26100e9cfb2b6a8f470085bfa541931a91"
+
+[[projects]]
   digest = "1:256dd949e34358cbf396484da03e028e3c004a7a031d59892aef0a101fa0a01c"
   name = "github.com/disintegration/imaging"
   packages = ["."]
@@ -45,8 +53,8 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/MakeNowJust/heredoc",
     "github.com/eliukblau/pixterm/ansimage",
-    "github.com/lucasb-eyer/go-colorful",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
