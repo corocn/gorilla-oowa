@@ -13,8 +13,8 @@ func main() {
 	)
 
 	// load from file
-	file := "./assets/gorilla.png"
-	pix, err = ansimage.NewScaledFromFile(
+	file := "https://emojipedia-us.s3.amazonaws.com/thumbs/320/twitter/147/gorilla_1f98d.png"
+	pix, err = ansimage.NewScaledFromURL(
 		file,
 		60, 76,
 		color.Black,
