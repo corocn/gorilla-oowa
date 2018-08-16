@@ -2,32 +2,36 @@ package main
 
 import (
 	"github.com/eliukblau/pixterm/ansimage"
-	"github.com/lucasb-eyer/go-colorful"
+	"image/color"
+	"os"
 )
 
 func main() {
-	println("\U0001F98D < Oowa Oowa !!")
-
-	var pix *ansimage.ANSImage
+	var (
+		pix *ansimage.ANSImage
+		err error
+	)
 
 	// get terminal size
-	tx := 80
-	ty := 24
-
-	// get scale mode from flag
-	sm := ansimage.ScaleMode(0)
-
-	// get dithering mode from flag
-	dm := ansimage.DitheringMode(0)
+	tx, ty := 80, 24
 
 	// set image scale factor for ANSIPixel grid
 	sfy, sfx := 2, 1
 
-	mc, _ := colorful.Hex("#000000") // RGB color from Hex format
-
+	// load from file
 	file := "./assets/gorilla.png"
 
-	pix, _ = ansimage.NewScaledFromFile(file, sfy*ty, sfx*tx, mc, sm, dm)
+	pix, err = ansimage.NewScaledFromFile(
+		file,
+		sfy*ty, sfx*tx,
+		color.Black,
+		ansimage.ScaleModeResize,
+		ansimage.NoDithering)
+
+	if err != nil {
+		os.Exit(1)
+	}
 
 	pix.Draw()
+	println("Oowa Oowa !!")
 }
