@@ -1,13 +1,31 @@
 package main
 
 import (
+	"image/color"
+
 	"github.com/MakeNowJust/heredoc"
 	"github.com/eliukblau/pixterm/ansimage"
-	"image/color"
+	"github.com/jessevdk/go-flags"
 )
 
+type Options struct {
+	Twemoji bool `short:"t" long:"twemoji" description:"Draw twemoji as image"`
+	Ascii   bool `short:"a" long:"ascii" description:"Draw ascii art as text"`
+}
+
+var opts Options
+
 func main() {
-	drawAsciiArtGorilla()
+	flags.Parse(&opts)
+
+	if opts.Twemoji {
+		drawTwemojiGorilla()
+	}
+
+	if opts.Ascii {
+		drawAsciiArtGorilla()
+	}
+
 	println("Oowa Oowa !!")
 }
 

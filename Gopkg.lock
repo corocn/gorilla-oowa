@@ -26,6 +26,14 @@
   version = "v1.2.4"
 
 [[projects]]
+  digest = "1:a2cff208d4759f6ba1b1cd228587b0a1869f95f22542ec9cd17fff64430113c7"
+  name = "github.com/jessevdk/go-flags"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c6ca198ec95c841fdb89fc0de7496fed11ab854e"
+  version = "v1.4.0"
+
+[[projects]]
   digest = "1:ce87064aaa97ee9598bffb4556f1cd6d513cf47791bb57ebc3f1619153f4d59f"
   name = "github.com/lucasb-eyer/go-colorful"
   packages = ["."]
@@ -55,6 +63,7 @@
   input-imports = [
     "github.com/MakeNowJust/heredoc",
     "github.com/eliukblau/pixterm/ansimage",
+    "github.com/jessevdk/go-flags",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
