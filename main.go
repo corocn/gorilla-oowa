@@ -12,18 +12,11 @@ func main() {
 		err error
 	)
 
-	// get terminal size
-	tx, ty := 80, 24
-
-	// set image scale factor for ANSIPixel grid
-	sfy, sfx := 2, 1
-
 	// load from file
 	file := "./assets/gorilla.png"
-
 	pix, err = ansimage.NewScaledFromFile(
 		file,
-		sfy*ty, sfx*tx,
+		60, 76,
 		color.Black,
 		ansimage.ScaleModeResize,
 		ansimage.NoDithering)
