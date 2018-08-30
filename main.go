@@ -30,14 +30,9 @@ func main() {
 }
 
 func drawTwemojiGorilla() {
-	var (
-		pix *ansimage.ANSImage
-		err error
-	)
-
 	// load from file
 	file := "https://emojipedia-us.s3.amazonaws.com/thumbs/320/twitter/147/gorilla_1f98d.png"
-	pix, err = ansimage.NewScaledFromURL(
+	pix, err := ansimage.NewScaledFromURL(
 		file,
 		60, 76,
 		color.Black,
